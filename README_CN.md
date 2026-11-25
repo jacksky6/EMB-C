@@ -16,3 +16,11 @@ Happy Hare 已集成对 EMB-C 主板的支持，目前可在
 硬件资料和更详细的使用说明将后续补充。
 
 ![EMB-C 正面](assets/EMB-Front.jpg)
+
+## 接线示意
+
+![EMB-C 与 EMU 舱门转接板及前置按键板的接线示意](assets/1.jpg)
+
+## 安装示例
+
+![EMB-C 在 EMU 外壳中的安装实拍](assets/2.jpg)

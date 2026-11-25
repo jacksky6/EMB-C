@@ -16,3 +16,11 @@ Before replacing any existing configuration with these templates, back up the or
 Hardware documentation and further setup details will be added later.
 
 ![EMB-C front view](assets/EMB-Front.jpg)
+
+## Wiring diagram
+
+![EMB-C wiring to the EMU hatch and front button boards](assets/1.jpg)
+
+## Installation examples
+
+![EMB-C installed in EMU enclosures](assets/2.jpg)
