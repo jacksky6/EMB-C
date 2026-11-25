@@ -4,6 +4,10 @@
 
 EMB-C is a single-board solution for a two- to five-lane EMU.
 
+Happy Hare has integrated support for the EMB-C board. Support is currently available in the
+[development branch](https://github.com/moggieuk/Happy-Hare/tree/development) and will be included
+in the stable 4.3 release.
+
 - [Happy-Hare-Config](Happy-Hare-Config/README.md): Happy Hare configuration templates.
 - [AFC-Config](AFC-Config/README.md): AFC configuration templates.
 
