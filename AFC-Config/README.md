@@ -2,12 +2,29 @@
 
 [中文](README_CN.md)
 
-These templates configure an EMB-C board for a two-, three-, four-, or five-lane EMU with AFC.
+These examples follow the EMB-C configuration in [AFC PR #925][afc-pr]. The installer
+selection is `EMU`, board `EMB_C`, with 2 to 5 lanes.
 
 1. Select the directory matching the number of lanes.
-2. Select `With-Front-Button-PCB` when using the EMU Front Button PCB, otherwise select `Without-Front-Button-PCB`.
-3. Set the EMB-C CAN UUID in the selected `AFC_EMU_1.cfg`.
-4. Copy `AFC_EMU_1.cfg` and `EMU_1.cfg` from that directory to the matching AFC configuration locations.
-5. Restart Klipper after checking the AFC includes.
+2. Select `With-Front-Button-PCB` for the EMU Front Button PCB, or
+   `Without-Front-Button-PCB` for ordinary microswitches.
+3. Set the CAN UUID in `AFC_EMU_1.cfg`, or use its commented serial connection option.
+4. Copy the files to these locations relative to your Klipper configuration directory:
 
-The selected directory already contains the final file names; no manual renaming is required. Back up an existing AFC configuration before replacing files.
+| Source | Destination |
+| --- | --- |
+| `AFC_EMU_1.cfg` | `AFC/AFC_EMU_1.cfg` |
+| `EMU_1.cfg` | `AFC/mcu/EMU_1.cfg` |
+
+5. Check the AFC includes and restart Klipper. Calibrate distances and motor currents before use.
+   Back up existing files before replacing them. Do not load both variants.
+
+With the Front Button PCB, each GRBW chain has 5 LEDs, using indexes `1-4` and `5`;
+buttons use `^!`. Without it, each chain has 2 LEDs, using indexes `1` and `2`;
+ordinary microswitch buttons retain `^`.
+
+Temperature/humidity configuration is separate. Install the [TCA9548A add-on][tca]
+and use its wizard to generate a configuration for AFC and your lane count.
+
+[afc-pr]: https://github.com/AFCProject/AFC-Klipper-Add-On/pull/925
+[tca]: https://github.com/jacksky6/TCA9548A-klipper-addon
