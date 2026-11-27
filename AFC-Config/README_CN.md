@@ -23,7 +23,17 @@
 无灯板版本每路为 2 颗，索引为 `1` 和 `2`，普通微动按钮保留 `^`。
 
 温湿度使用独立配置。安装 [TCA9548A 插件][tca]，
-通过其向导选择 AFC 和实际通道数生成配置。
+在其向导中选择 AFC、实际通道数和 AHT20。
+
+也可使用对应 `For-N-Lanes` 目录中的 `tca9548a.cfg`。
+这些文件由插件生成器按对应通道数和默认 AHT20 生成，有／无灯板版本共用。
+将其复制到 Klipper 配置目录，在 `printer.cfg` 最顶端添加以下内容，后面留一个空行：
+
+```ini
+[include tca9548a.cfg]
+```
+
+向导生成的配置与这些示例二选一，不要重复引用。
 
 [afc-pr]: https://github.com/AFCProject/AFC-Klipper-Add-On/pull/925
 [tca]: https://github.com/jacksky6/TCA9548A-klipper-addon

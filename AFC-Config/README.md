@@ -24,7 +24,18 @@ buttons use `^!`. Without it, each chain has 2 LEDs, using indexes `1` and `2`;
 ordinary microswitch buttons retain `^`.
 
 Temperature/humidity configuration is separate. Install the [TCA9548A add-on][tca]
-and use its wizard to generate a configuration for AFC and your lane count.
+and select AFC, your lane count and AHT20 in its wizard.
+
+Alternatively, use `tca9548a.cfg` from the selected `For-N-Lanes` directory. These
+files come from the add-on generator with the matching lane count and default AHT20
+sensors. Both front PCB variants share the same file. Copy it to your Klipper
+configuration directory and add this at the top of `printer.cfg`, followed by a blank line:
+
+```ini
+[include tca9548a.cfg]
+```
+
+Use either the wizard-generated file or the example, not both.
 
 [afc-pr]: https://github.com/AFCProject/AFC-Klipper-Add-On/pull/925
 [tca]: https://github.com/jacksky6/TCA9548A-klipper-addon
